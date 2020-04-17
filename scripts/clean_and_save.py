@@ -19,9 +19,10 @@ def clean_and_save_country(country_name, df):
     country = country.agg(['sum'])
     country = country.T
     country.reset_index(level=0, inplace=True)
-    country['date'] = pd.to_datetime(country['index'])
-    country.drop(columns = ['index'], inplace=True)
-    country.to_csv('../data' + country_name + '_timeseries.csv')
+    country['index'] = pd.to_datetime(country['index'])
+    country.rename(columns={'index': 'date'}, inplace=True)
+
+    country.to_csv('../data/' + country_name + '_timeseries.csv', index=False)
 
 def clean_and_save_worldwide(df):
     """Clean Worldwide infections and save to CSV
@@ -39,7 +40,7 @@ def clean_and_save_worldwide(df):
     df.drop(columns=drop_columns, inplace=True)
 
     df_cases = df.groupby(['Country_Region'], as_index=False).sum()
-    df_cases.to_csv('../data/Total_cases_wordlwide.csv')
+    df_cases.to_csv('../data/Total_cases_wordlwide.csv', index=False)
 
 def clean_and_save_german_states(df):
     """Clean Data for fedaral states in germany. Save as CSV
@@ -49,7 +50,7 @@ def clean_and_save_german_states(df):
     """
     df.columns = ['Bundesland', 'Anzahl', 'diff', 'Pro_Tsd', 'Gestorben']
     df.drop(columns=['diff'], index=[16], inplace=True)
-    df.to_csv('../data/cases_germany_states.csv')
+    df.to_csv('../data/cases_germany_states.csv', index=False)
 
 
 if __name__ == '__main__':
