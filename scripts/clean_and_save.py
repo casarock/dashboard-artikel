@@ -52,6 +52,26 @@ def clean_and_save_german_states(df):
     df.drop(columns=['diff'], index=[16], inplace=True)
     df.to_csv('../data/cases_germany_states.csv', index=False)
 
+def clean_and_save_timeseries(df):
+    """ Clean all timeseries data world wide and save as CSV
+    
+    Arguments:
+        df {Dataframe} -- Pandas Dataframe to be cleaned
+    """
+    drop_columns = ['Lat', 
+                    'Long', 
+                    'Province/State']
+
+    df.drop(columns=drop_columns, inplace = True)
+    
+    df_grouped = df.groupby(['Country/Region'], as_index=False).sum()
+    df_grouped = df_grouped.set_index('Country/Region').transpose()
+    df_grouped.reset_index(level=0, inplace=True)
+    df_grouped.rename(columns={'index': 'Date'}, inplace=True)
+    df_grouped['Date'] = pd.to_datetime(df_grouped['Date'])
+
+    df_grouped.to_csv('../data/worldwide_timeseries.csv', index=False
+
 
 if __name__ == '__main__':
     df_countries = pd.read_csv('../original_data/time_series_covid19_confirmed_global.csv')
