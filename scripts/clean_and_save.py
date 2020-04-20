@@ -40,7 +40,7 @@ def clean_and_save_worldwide(df):
     df.drop(columns=drop_columns, inplace=True)
 
     df_cases = df.groupby(['Country_Region'], as_index=False).sum()
-    df_cases.to_csv('../data/Total_cases_wordlwide.csv', index=False)
+    df_cases.to_csv('../data/Total_cases_worldwide.csv', index=False)
 
 def clean_and_save_german_states(df):
     """Clean Data for fedaral states in germany. Save as CSV
@@ -70,16 +70,15 @@ def clean_and_save_timeseries(df):
     df_grouped.rename(columns={'index': 'Date'}, inplace=True)
     df_grouped['Date'] = pd.to_datetime(df_grouped['Date'])
 
-    df_grouped.to_csv('../data/worldwide_timeseries.csv', index=False
-
+    df_grouped.to_csv('../data/worldwide_timeseries.csv', index=False)
 
 if __name__ == '__main__':
     df_countries = pd.read_csv('../original_data/time_series_covid19_confirmed_global.csv')
-    df_world_wide = pd.read_csv('../original_data/04-13-2020.csv')
+    df_world_wide = pd.read_csv('../original_data/04-19-2020.csv')
     df_rki = pd.read_html('../original_data/Fallzahlen.html', decimal=',', thousands='.')
     df_de_states = df_rki[0]
 
-    clean_and_save_country('Germany', df_countries)
+    clean_and_save_timeseries(df_countries)
     clean_and_save_worldwide(df_world_wide)
     clean_and_save_german_states(df_de_states)
     
