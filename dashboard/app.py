@@ -9,7 +9,7 @@ import dashboard_figures as mf
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 df_ww = pd.read_csv('../data/worldwide_timeseries.csv')
-df_total = pd.read_csv('../data/Total_cases_wordlwide.csv')
+df_total = pd.read_csv('../data/Total_cases_worldwide.csv')
 df_germany = pd.read_csv('../data/cases_germany_states.csv')
 
 fig_geo_ww = mf.get_wordlwide_cases(df_total)
