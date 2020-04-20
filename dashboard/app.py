@@ -74,7 +74,7 @@ app.layout = html.Div(children=[
     # Combobox and Checkbox
     html.Div(children=[
         html.Div(children=[
-            # combobox
+            # Combobox
             dcc.Dropdown(
                 id='country-dropdown',
                 options=dd_options,
