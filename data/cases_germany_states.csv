@@ -1,17 +1,17 @@
-Bundesland,Anzahl,Pro_Tsd,Gestorben
-Baden-Württem­berg,28253,255,982
-Bayern,37849,289,1286
-Berlin,5196,139,94
-Brandenburg,2238,89,66
-Bremen,604,88,25
-Hamburg,4185,227,91
-Hessen,7177,115,240
-Mecklenburg- Vor­pommern,653,41,15
-Niedersachsen,8900,111,291
-Nordrhein-West­falen,28971,162,857
-Rhein­land-Pfalz,5523,135,107
-Saarland,2314,234,91
-Sachsen,4229,104,109
-Sachsen-Anhalt,1369,62,30
-Schles­wig-Holstein,2426,84,67
-Thüringen,1785,83,53
+,Bundesland,Anzahl,Pro_Tsd,Gestorben
+0,Baden-Württem­berg,28712,259,1031
+1,Bayern,38310,293,1336
+2,Berlin,5237,140,97
+3,Brandenburg,2275,91,67
+4,Bremen,609,89,25
+5,Hamburg,4204,228,91
+6,Hessen,7231,115,251
+7,Mecklenburg- Vor­pommern,655,41,15
+8,Niedersachsen,9098,114,306
+9,Nordrhein-West­falen,29389,164,896
+10,Rhein­land-Pfalz,5561,136,116
+11,Saarland,2328,235,93
+12,Sachsen,4253,104,117
+13,Sachsen-Anhalt,1383,63,32
+14,Schles­wig-Holstein,2414,83,70
+15,Thüringen,1798,84,55
