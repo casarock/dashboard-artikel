@@ -1,7 +1,7 @@
 import plotly.express as px
 
 def get_wordlwide_cases(df):
-    """ Get plotly express figure for world wirde cases
+    """ Get plotly express figure for world wide cases
     
     Arguments:
         df {Datafram} -- Pandas Dataframe for the cases
