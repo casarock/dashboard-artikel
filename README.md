@@ -16,7 +16,13 @@ Alle daten sind heruntergeladen, um einen einheitlichen Stand zu haben.
 Die benötigten Module für Python sind in `requirements.txt` zu finden.
 
 ## Verwendung
-Installation der Module, anschließend kann das Dashboard gestartet werden.
+Installation der Module mit Anaconda:
+
+```bash 
+$ conda env create -f environment.yml
+```
+
+Anschließend kann das Dashboard gestartet werden.
 
 ```bash
 $ cd dashboard
